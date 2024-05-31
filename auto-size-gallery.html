@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <title>CSS Gallery</title>
+    <style type="text/css">
+        :root {
+            --item-size: 140px;
+        }
+
+        .gallery {
+            padding: 2em;
+            display: grid;
+            grid-template-columns: minmax(0, auto) [start-rep] repeat(auto-fit, minmax(var(--item-size), max-content)) [end-rep] minmax(0px, auto);
+            gap: 1em;
+        }
+
+        .sub {
+            position: relative;
+            display: grid;
+            grid-template-columns: subgrid;
+            grid-column: start-rep / end-rep;
+            gap: 1em;
+        }
+
+        .item {
+            position: relative;
+            border-radius: .5em;
+            width: var(--item-size);
+            height: var(--item-size);
+            text-align: center;
+            line-height: var(--item-size);
+            background-color: #0002;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        }
+
+        .background {
+            position: absolute;
+            inset: -1em;
+            background-color: #fff;
+            border-radius: 1em;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>This gallery should automatically fit the fixed-size items into the available space and have a nice background
+        around the items and not the outer grid.</p>
+    <div class="container">
+        <div class="gallery">
+            <div class="sub">
+                <div class="background"></div>
+                <div class="item">A</div>
+                <div class="item">B</div>
+                <div class="item">C</div>
+                <div class="item">D</div>
+                <div class="item">E</div>
+                <div class="item">F</div>
+                <div class="item">G</div>
+                <div class="item">H</div>
+                <div class="item">I</div>
+                <div class="item">J</div>
+                <div class="item">K</div>
+                <div class="item">L</div>
+                <div class="item">M</div>
+                <div class="item">N</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
